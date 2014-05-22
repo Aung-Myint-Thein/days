@@ -25,7 +25,12 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+<script>			
+    $(document).ready(function() {
+	
+		$('#update_message').html("180 days");
+	});
+  </script>
   <body>
 
     <div class="site-wrapper">
@@ -37,19 +42,14 @@
           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">Days</h3>
-              <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
             </div>
           </div>
 
           <div class="inner cover">
             <h1 class="cover-heading">Number of days</h1>
-            <p class="lead">This is the number of days we are together officially since 1 November 2013. I love you so much, honey.</p>
+            <p class="lead">This is the number of days we are together since 1 November 2013. <br> I love you so much, honey.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">180 days</a>
+              <a id="update_message" href="#" class="btn btn-lg btn-default"></a>
             </p>
           </div>
 
@@ -71,5 +71,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
+	
+	<script>
+		var x=new Date();
+		x.setFullYear(2013,10,1);
+		var today = new Date();
+		var days = (today-x)/(1000*60*60*24);
+		document.getElementById("update_message").innerHTML = days+" days";
+	</script>
+	
   </body>
 </html>
